@@ -83,6 +83,9 @@ waterfall_sampSort <- function(x, sampOrder=NULL)
     {
         sample_order <- c(sample_order, samp_no_mut)
     }
+    
+    # see issue #325, make sure sample_order values are unique
+    sample_order <- unique(sample_order)
 
     return(sample_order)
 }
