@@ -308,8 +308,10 @@ setMethod(f="setMutationHierarchy",
               # these are split up and taken care of in toWaterfall(), see below
               consequences <- as.character(unique(object@vepObject@mutation$Consequence))
               consequences <- consequences[grepl(",", consequences, fixed=TRUE)]
-              consequencesSplit <- strsplit(consequences, ",", fixed=TRUE)
-              consequences <- consequences[sapply(consequencesSplit, function(x) all(x %in% mutationHierarchy$mutation))]
+              if(length(consequences) != 0){
+                  consequencesSplit <- strsplit(consequences, ",", fixed=TRUE)
+                  consequences <- consequences[sapply(consequencesSplit, function(x) all(x %in% mutationHierarchy$mutation))]
+              }
               
               # check that all mutations are specified, if not add entries for them
               if(!all(object@vepObject@mutation$Consequence %in% c(mutationHierarchy$mutation, consequences))){
