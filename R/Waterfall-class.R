@@ -5,7 +5,7 @@
 
 #' Class Waterfall
 #' 
-#' An S4 class for the waterfall plot object, under development!!!
+#' An S4 class for the waterfall plot object
 #' @name Waterfall-class
 #' @rdname Waterfall-class
 #' @slot PlotA gtable object for the top sub-plot.
@@ -145,8 +145,6 @@ Waterfall <- function(input, labelColumn=NULL, samples=NULL, coverage=NULL,
                       gridOverlay=FALSE, drop=TRUE, labelSize=5, labelAngle=0,
                       sampleNames=TRUE, clinical=NULL, sectionHeights=NULL,
                       sectionWidths=NULL, verbose=FALSE, plotCLayers=NULL){
-    
-    message("This function is part of the new S4 feature and is under active development, did you mean to use waterfall() with a lower case w?")
     
     # calculate all data for plots
     data <- WaterfallData(input, labelColumn=labelColumn, mutationHierarchy=mutationHierarchy,
