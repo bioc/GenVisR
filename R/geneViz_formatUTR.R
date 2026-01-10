@@ -20,7 +20,7 @@ geneViz_formatUTR <- function(txdb=NULL, gr=NULL, genome=NULL, reduce=FALSE)
     if(is.null(UTR)){
         return(NA)
     }
-    if(is.na(UTR)){
+    if(any(is.na(UTR))){
         return(NA)
     }
 
